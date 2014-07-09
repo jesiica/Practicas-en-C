@@ -1,32 +1,22 @@
-#include <iostream.h>
 #include <stdio.h>
-#include <conio.h>
-
-void Fibonacci(int n) 
+int fibonacci(int n)
 {
-  long i,b1=1,b2=0,Aux;
-  for (i=1;i<=n;i++)
-  {
-    Aux=b2;
-    printf("%ld + %ld = %ld\n\r",b1,b2,b1+b2);
-    b2= b1 + b2;
-    b1= Aux;
-  }
+    if (n<2)
+        return n;
+    else
+        return fibonacci(n-1) + fibonacci(n-2);
 }
-
-
-void main()
+int main()
 {
-  int n;
-  int Fib;
-  
-  printf("Cuantos d¡gitos deseas calcular: ");
-  cin >> n;
-
-  Fibonacci(n);
-  
-  printf("\n\n\rPresiona una tecla...");
-  getch();
+   int num=0,res=0,i;
+    printf("Introduce el numero para fibonacci: ");
+    scanf("%d",&num);
+    
+    for(i=0;i<=num-1;i++)
+    {
+        res = fibonacci(i);
+        printf("%i  ", res);
+    }
+        printf("\n");
+    return 0;
 }
-
-	
